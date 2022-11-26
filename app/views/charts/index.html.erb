@@ -1,0 +1,35 @@
+<h1>Listing charts</h1>
+
+<table>
+  <tr>
+    <th>Tdate</th>
+    <th>Soap</th>
+    <th>Aculist</th>
+    <th>Cmedlist</th>
+    <th>Cforlist</th>
+    <th>Otreats</th>
+    <th>Regi</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @charts.each do |chart| %>
+  <tr>
+    <td><%= chart.tDate %></td>
+    <td><%= chart.soap %></td>
+    <td><%= chart.acuList %></td>
+    <td><%= chart.cMedList %></td>
+    <td><%= chart.cForList %></td>
+    <td><%= chart.oTreats %></td>
+    <td><%= chart.regi %></td>
+    <td><%= link_to 'Show', [chart.regi, chart] %></td>
+    <td><%= link_to 'Edit', edit_regi_chart_path(chart.regi, chart) %></td>
+    <td><%= link_to 'Destroy', [chart.regi, chart], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Chart', new_regi_chart_path(params[:regi_id]) %>

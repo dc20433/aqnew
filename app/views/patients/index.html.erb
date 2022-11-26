@@ -1,0 +1,103 @@
+<h1>Listing patients</h1>
+
+<table>
+  <tr>
+    <th>Vdate</th>
+    <th>Mstat</th>
+    <th>Height</th>
+    <th>Weight</th>
+    <th>Street</th>
+    <th>City</th>
+    <th>State</th>
+    <th>Zip</th>
+    <th>Cell</th>
+    <th>Home</th>
+    <th>Work</th>
+    <th>Email</th>
+    <th>Referred</th>
+    <th>Com1</th>
+    <th>Com2</th>
+    <th>Com3</th>
+    <th>Donset</th>
+    <th>Painscale</th>
+    <th>Dlost</th>
+    <th>Drestd</th>
+    <th>Conset</th>
+    <th>Better</th>
+    <th>Worse</th>
+    <th>Odrs</th>
+    <th>Odrswhen</th>
+    <th>Pcpnm</th>
+    <th>Hosp</th>
+    <th>Hwhen</th>
+    <th>Diaggiven</th>
+    <th>Diagwhere</th>
+    <th>Aqb4</th>
+    <th>Aqrist</th>
+    <th>Aqwhere</th>
+    <th>Dilist</th>
+    <th>Odis</th>
+    <th>Injsurg</th>
+    <th>Medtaken</th>
+    <th>Lastprd</th>
+    <th>Preg</th>
+    <th>Pregwks</th>
+    <th>Regi</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @patients.each do |patient| %>
+  <tr>
+    <td><%= patient.vDate %></td>
+    <td><%= patient.mStat %></td>
+    <td><%= patient.height %></td>
+    <td><%= patient.weight %></td>
+    <td><%= patient.street %></td>
+    <td><%= patient.city %></td>
+    <td><%= patient.state %></td>
+    <td><%= patient.zip %></td>
+    <td><%= patient.cell %></td>
+    <td><%= patient.home %></td>
+    <td><%= patient.work %></td>
+    <td><%= patient.email %></td>
+    <td><%= patient.referred %></td>
+    <td><%= patient.com1 %></td>
+    <td><%= patient.com2 %></td>
+    <td><%= patient.com3 %></td>
+    <td><%= patient.dOnset %></td>
+    <td><%= patient.painScale %></td>
+    <td><%= patient.dLost %></td>
+    <td><%= patient.dRestd %></td>
+    <td><%= patient.cOnset %></td>
+    <td><%= patient.better %></td>
+    <td><%= patient.worse %></td>
+    <td><%= patient.oDrs %></td>
+    <td><%= patient.oDrsWhen %></td>
+    <td><%= patient.pcpNm %></td>
+    <td><%= patient.hosp %></td>
+    <td><%= patient.hWhen %></td>
+    <td><%= patient.diagGiven %></td>
+    <td><%= patient.diagWhere %></td>
+    <td><%= patient.aqB4 %></td>
+    <td><%= patient.aqrist %></td>
+    <td><%= patient.aqWhere %></td>
+    <td><%= patient.diList %></td>
+    <td><%= patient.oDis %></td>
+    <td><%= patient.injSurg %></td>
+    <td><%= patient.medTaken %></td>
+    <td><%= patient.lastPrd %></td>
+    <td><%= patient.preg %></td>
+    <td><%= patient.pregWks %></td>
+    <td><%= patient.regi %></td>
+    <td><%= link_to 'Show', [patient.regi, patient] %></td>
+    <td><%= link_to 'Edit', edit_regi_patient_path(patient.regi, patient) %></td>
+    <td><%= link_to 'Destroy', [patient.regi, patient], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Patient', new_regi_patient_path(params[:regi_id]) %>

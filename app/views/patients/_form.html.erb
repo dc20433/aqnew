@@ -1,0 +1,181 @@
+<%= form_for([@patient.regi, @patient]) do |f| %>
+  <% if @patient.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@patient.errors.count, "error") %> prohibited this patient from being saved:</h2>
+
+      <ul>
+      <% @patient.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :vDate %><br />
+    <%= f.date_field :vDate %>
+  </div>
+  <div class="field">
+    <%= f.label :mStat %><br />
+    <%= f.text_field :mStat %>
+  </div>
+  <div class="field">
+    <%= f.label :height %><br />
+    <%= f.text_field :height %>
+  </div>
+  <div class="field">
+    <%= f.label :weight %><br />
+    <%= f.text_field :weight %>
+  </div>
+  <div class="field">
+    <%= f.label :street %><br />
+    <%= f.text_field :street %>
+  </div>
+  <div class="field">
+    <%= f.label :city %><br />
+    <%= f.text_field :city %>
+  </div>
+  <div class="field">
+    <%= f.label :state %><br />
+    <%= f.text_field :state %>
+  </div>
+  <div class="field">
+    <%= f.label :zip %><br />
+    <%= f.text_field :zip %>
+  </div>
+  <div class="field">
+    <%= f.label :cell %><br />
+    <%= f.text_field :cell %>
+  </div>
+  <div class="field">
+    <%= f.label :home %><br />
+    <%= f.text_field :home %>
+  </div>
+  <div class="field">
+    <%= f.label :work %><br />
+    <%= f.text_field :work %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :referred %><br />
+    <%= f.text_field :referred %>
+  </div>
+  <div class="field">
+    <%= f.label :com1 %><br />
+    <%= f.text_field :com1 %>
+  </div>
+  <div class="field">
+    <%= f.label :com2 %><br />
+    <%= f.text_field :com2 %>
+  </div>
+  <div class="field">
+    <%= f.label :com3 %><br />
+    <%= f.text_field :com3 %>
+  </div>
+  <div class="field">
+    <%= f.label :dOnset %><br />
+    <%= f.date_field :dOnset %>
+  </div>
+  <div class="field">
+    <%= f.label :painScale %><br />
+    <%= f.number_field :painScale %>
+  </div>
+  <div class="field">
+    <%= f.label :dLost %><br />
+    <%= f.number_field :dLost %>
+  </div>
+  <div class="field">
+    <%= f.label :dRestd %><br />
+    <%= f.number_field :dRestd %>
+  </div>
+  <div class="field">
+    <%= f.label :cOnset %><br />
+    <%= f.text_field :cOnset %>
+  </div>
+  <div class="field">
+    <%= f.label :better %><br />
+    <%= f.text_field :better %>
+  </div>
+  <div class="field">
+    <%= f.label :worse %><br />
+    <%= f.text_field :worse %>
+  </div>
+  <div class="field">
+    <%= f.label :oDrs %><br />
+    <%= f.text_field :oDrs %>
+  </div>
+  <div class="field">
+    <%= f.label :oDrsWhen %><br />
+    <%= f.date_field :oDrsWhen %>
+  </div>
+  <div class="field">
+    <%= f.label :pcpNm %><br />
+    <%= f.text_field :pcpNm %>
+  </div>
+  <div class="field">
+    <%= f.label :hosp %><br />
+    <%= f.text_field :hosp %>
+  </div>
+  <div class="field">
+    <%= f.label :hWhen %><br />
+    <%= f.date_field :hWhen %>
+  </div>
+  <div class="field">
+    <%= f.label :diagGiven %><br />
+    <%= f.text_field :diagGiven %>
+  </div>
+  <div class="field">
+    <%= f.label :diagWhere %><br />
+    <%= f.text_field :diagWhere %>
+  </div>
+  <div class="field">
+    <%= f.label :aqB4 %><br />
+    <%= f.text_field :aqB4 %>
+  </div>
+  <div class="field">
+    <%= f.label :aqrist %><br />
+    <%= f.text_field :aqrist %>
+  </div>
+  <div class="field">
+    <%= f.label :aqWhere %><br />
+    <%= f.text_field :aqWhere %>
+  </div>
+  <div class="field">
+    <%= f.label :diList %><br />
+    <%= f.text_field :diList %>
+  </div>
+  <div class="field">
+    <%= f.label :oDis %><br />
+    <%= f.text_field :oDis %>
+  </div>
+  <div class="field">
+    <%= f.label :injSurg %><br />
+    <%= f.text_field :injSurg %>
+  </div>
+  <div class="field">
+    <%= f.label :medTaken %><br />
+    <%= f.text_field :medTaken %>
+  </div>
+  <div class="field">
+    <%= f.label :lastPrd %><br />
+    <%= f.date_field :lastPrd %>
+  </div>
+  <div class="field">
+    <%= f.label :preg %><br />
+    <%= f.text_field :preg %>
+  </div>
+  <div class="field">
+    <%= f.label :pregWks %><br />
+    <%= f.number_field :pregWks %>
+  </div>
+  <div class="field">
+    <%= f.label :regi %><br />
+    <%= f.text_field :regi %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

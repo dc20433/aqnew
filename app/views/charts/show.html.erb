@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Tdate:</b>
+  <%= @chart.tDate %>
+</p>
+
+<p>
+  <b>Soap:</b>
+  <%= @chart.soap %>
+</p>
+
+<p>
+  <b>Aculist:</b>
+  <%= @chart.acuList %>
+</p>
+
+<p>
+  <b>Cmedlist:</b>
+  <%= @chart.cMedList %>
+</p>
+
+<p>
+  <b>Cforlist:</b>
+  <%= @chart.cForList %>
+</p>
+
+<p>
+  <b>Otreats:</b>
+  <%= @chart.oTreats %>
+</p>
+
+<p>
+  <b>Regi:</b>
+  <%= @chart.regi %>
+</p>
+
+
+<%= link_to 'Edit', edit_regi_chart_path(@chart.regi, @chart) %> |
+<%= link_to 'Back', regi_charts_path(@chart.regi) %>
