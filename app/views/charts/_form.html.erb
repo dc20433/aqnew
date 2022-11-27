@@ -1,4 +1,4 @@
-<%= form_for([@chart.regi, @chart]) do |f| %>
+<%= form_with(model: [@regi, @chart]) do |f| %>
   <% if @chart.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@chart.errors.count, "error") %> prohibited this chart from being saved:</h2>
@@ -11,35 +11,40 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :tDate %><br />
-    <%= f.date_field :tDate %>
+  <div class="row">
+    <div class="col col-md-2">
+      <b>Updated on</b>
+      <%= f.date_field :tDate, class:"form-control border-primary" %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :soap %><br />
-    <%= f.text_area :soap %>
+
+  <div class="row">
+    <div class="col">
+      <b>Acupoints Used</b>
+      <%= f.text_field :acuList, class:"form-control border-primary" %>
+    </div>
+    <div class="col">
+      <b>Chinese Medicines</b>
+      <%= f.text_field :cMedList, class:"form-control border-primary" %>
+    </div>
+    <div class="col">
+      <b>Formulae</b>
+      <%= f.text_field :cForList, class:"form-control border-primary" %>
+    </div>
+    <div class="col">
+      <b>Other Treatments</b>
+      <%= f.text_field :oTreats, class:"form-control border-primary" %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :acuList %><br />
-    <%= f.text_field :acuList %>
+
+  <div class="col">
+    <b>S.O.A.P.</br>
+    <%= f.text_area :soap, class:"form-control border-primary", style:"height: 100px" %>
   </div>
-  <div class="field">
-    <%= f.label :cMedList %><br />
-    <%= f.text_field :cMedList %>
-  </div>
-  <div class="field">
-    <%= f.label :cForList %><br />
-    <%= f.text_field :cForList %>
-  </div>
-  <div class="field">
-    <%= f.label :oTreats %><br />
-    <%= f.text_field :oTreats %>
-  </div>
-  <div class="field">
-    <%= f.label :regi %><br />
-    <%= f.text_field :regi %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  <br>
+  <div class="btn-group" role="group">
+    <%= f.submit "Update", class: "btn btn-sm btn-primary m-2" %>
 <% end %>
+  <%= button_to "Delete", [@regi,@chart], method: :delete, class:"btn btn-sm btn-danger m-2", form: { data: { turbo_confirm: "Are you sure?" } } %>
+  <%= link_to 'Retun', regi_charts_path(@regi), class:"btn btn-sm btn-info m-2" %>
+  </div>

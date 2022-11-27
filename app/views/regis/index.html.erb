@@ -15,7 +15,7 @@
       <th style="width:150px"></th>
     </tr>
   </thead>
-<% @regis.all.sort_by{ |h| h[:lastNm] }.each do |regi| %>
+<% @regis.order('lastNm').each do |regi| %>
 
   <tr>
     <td><%= link_to regi.lastNm, regi_path(regi.id) %></td>

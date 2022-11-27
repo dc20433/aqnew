@@ -1,5 +1,8 @@
-<h1>New chart</h1>
+<h1 class="text-center">Create New Chart</h1>
+<%= render 'layouts/identifier' %>
 
-<%= render 'form' %>
-
-<%= link_to 'Back', regi_charts_path(@chart.regi) %>
+<% if defined?(Chart.where(regi_id: params[:regi_id]).last.id) %>
+  <%= render 'chart' %>
+<% else %>
+  <%= render 'form' %>
+<% end %>

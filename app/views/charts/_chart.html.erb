@@ -1,0 +1,52 @@
+<% @c = Chart.where(regi_id: params[:regi_id]).sort_by{ |h| h[:tDate]} %>
+
+<%= form_with(model: [@regi,@chart]) do |f| %>
+  
+   <% if @chart.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@chart.errors.count, "error") %> prohibited this chart from being saved:</h2>
+
+      <ul>
+      <% @chart.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="row">
+    <div class="col col-md-2">
+      <b>Updated on</b>
+      <%= f.date_field :tDate, value:@c.last.tDate, class:"form-control border-primary" %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <b>Acupoints Used</b>
+      <%= f.text_field :acuList, value:@c.last.acuList, class:"form-control border-primary" %>
+    </div>
+    <div class="col">
+      <b>Chinese Medicines</b>
+      <%= f.text_field :cMedList, value:@c.last.cMedList, class:"form-control border-primary" %>
+    </div>
+    <div class="col">
+      <b>Formulae</b>
+      <%= f.text_field :cForList, value:@c.last.cForList, class:"form-control border-primary" %>
+    </div>
+    <div class="col">
+      <b>Other Treatments</b>
+      <%= f.text_field :oTreats, value:@c.last.oTreats, class:"form-control border-primary" %>
+    </div>
+  </div>
+
+  <div class="col">
+    <b>S.O.A.P.</br>
+    <%= f.text_area :soap, value:@c.last.soap, class:"form-control border-primary", style:"height: 100px" %>
+  </div>
+ <br>
+  <div class="actions">
+    <%= f.submit "Create", class:'btn btn-outline-primary btn-sm col-md-1' %>
+<% end %>
+  <%= link_to 'Retun', regi_charts_path(@regi), class: 'btn btn-outline-info btn-sm col-md-1' %>
+  </div>

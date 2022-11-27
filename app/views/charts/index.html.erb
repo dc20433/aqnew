@@ -1,35 +1,31 @@
-<h1>Listing charts</h1>
+<h1 class="text-center">Patient charts</h1>
+<%= render 'layouts/identifier' %>
 
-<table>
-  <tr>
-    <th>Tdate</th>
-    <th>Soap</th>
-    <th>Aculist</th>
-    <th>Cmedlist</th>
-    <th>Cforlist</th>
-    <th>Otreats</th>
-    <th>Regi</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<%= link_to 'New Chart', new_regi_chart_path, class: "btn btn-outline-dark m-1" %>
+<%= link_to 'Patient Info', regi_patients_path, class:"btn btn-outline-success m-1" %>
+<%= link_to 'Patient Listing', regis_path, class:"btn btn-outline-primary m-1" %>
 
-<% @charts.each do |chart| %>
-  <tr>
-    <td><%= chart.tDate %></td>
-    <td><%= chart.soap %></td>
-    <td><%= chart.acuList %></td>
-    <td><%= chart.cMedList %></td>
-    <td><%= chart.cForList %></td>
-    <td><%= chart.oTreats %></td>
-    <td><%= chart.regi %></td>
-    <td><%= link_to 'Show', [chart.regi, chart] %></td>
-    <td><%= link_to 'Edit', edit_regi_chart_path(chart.regi, chart) %></td>
-    <td><%= link_to 'Destroy', [chart.regi, chart], method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
+<table class="table table-striped table-hover">
+  <thead class="table-primary">
+    <tr>
+      <th style="width:105px">Updated on</th>
+      <th>S.O.A.P.</th>
+      <th>Acupoints</th>
+      <th>Medicines</th>
+      <th>Formulae</th>
+      <th>Other</th>
+    </tr>
+  </thead>
+  </tbody>
+    <% @regi.charts.order("tDate DESC").each do |chart| %>
+      <tr style="height:15px">
+        <td><%= link_to chart.tDate, regi_chart_path(@regi,chart)  %></td>
+        <td style="overflow: hidden"><%= chart.soap %></td>
+        <td><%= chart.acuList %></td>
+        <td><%= chart.cMedList %></td>
+        <td><%= chart.cForList %></td>
+        <td><%= chart.oTreats %></td>
+      </tr>
+    <% end %>
+  </tbody>
 </table>
-
-<br />
-
-<%= link_to 'New Chart', new_regi_chart_path(params[:regi_id]) %>
