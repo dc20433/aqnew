@@ -44,9 +44,8 @@
     <b>S.O.A.P.</br>
     <%= f.text_area :soap, value:@c.last.soap, class:"form-control border-primary", style:"height: 100px" %>
   </div>
- <br>
   <div class="actions">
-    <%= f.submit "Create", class:'btn btn-outline-primary btn-sm col-md-1' %>
+    <%= f.submit "Create", class:'btn btn-primary btn-sm mt-3 me-3 ps-3 pe-3' %>
 <% end %>
-  <%= link_to 'Retun', regi_charts_path(@regi), class: 'btn btn-outline-info btn-sm col-md-1' %>
+  <%= link_to 'Retun', regi_charts_path(@regi), class: 'btn btn-success btn-sm mt-3 ps-3 pe-3' %>
   </div>

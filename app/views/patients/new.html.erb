@@ -1,5 +1,8 @@
-<h1>New patient</h1>
+<h1 class="text-center">New Record</h1>
+<%= render 'layouts/identifier' %>
 
-<%= render 'form' %>
-
-<%= link_to 'Back', regi_patients_path(@patient.regi) %>
+<% if defined?(Patient.where(regi_id: params[:regi_id]).last.id) %>
+  <%= render 'patient' %>
+<% else %>
+  <%= render 'form' %>
+<% end %>

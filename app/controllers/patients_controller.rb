@@ -4,47 +4,45 @@ class PatientsController < ApplicationController
 
   # GET regis/1/patients
   def index
-    @patients = @regi.patients
+  end
+
+  # GET regis/1/patients/new
+  def new
+    @patient = Patient.new
+  end
+
+  # POST regis/1/patients
+  def create
+    @patient = Patient.new patient_params
+    if @regi.patients << @patient
+      redirect_to(regi_patients_path(@regi,@patient), notice: 'Patient Record created.')
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   # GET regis/1/patients/1
   def show
   end
 
-  # GET regis/1/patients/new
-  def new
-    @patient = @regi.patients.build
-  end
-
   # GET regis/1/patients/1/edit
   def edit
   end
 
-  # POST regis/1/patients
-  def create
-    @patient = @regi.patients.build(patient_params)
-
-    if @patient.save
-      redirect_to([@patient.regi, @patient], notice: 'Patient was successfully created.')
-    else
-      render action: 'new'
-    end
-  end
 
   # PUT regis/1/patients/1
   def update
-    if @patient.update_attributes(patient_params)
-      redirect_to([@patient.regi, @patient], notice: 'Patient was successfully updated.')
+    if @patient.update patient_params
+      redirect_to regi_patients_path(@regi), notice:'Patient Record updated.'
     else
-      render action: 'edit'
+      render :edit, status: :unprocessable_entity
     end
   end
 
   # DELETE regis/1/patients/1
   def destroy
     @patient.destroy
-
-    redirect_to regi_patients_url(@regi)
+    redirect_to regi_patients_path(@regi), alter:"Patient Record deleted"
   end
 
   private
@@ -59,6 +57,6 @@ class PatientsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def patient_params
-      params.require(:patient).permit(:vDate, :mStat, :height, :weight, :street, :city, :state, :zip, :cell, :home, :work, :email, :referred, :com1, :com2, :com3, :dOnset, :painScale, :dLost, :dRestd, :cOnset, :better, :worse, :oDrs, :oDrsWhen, :pcpNm, :hosp, :hWhen, :diagGiven, :diagWhere, :aqB4, :aqrist, :aqWhere, :diList, :oDis, :injSurg, :medTaken, :lastPrd, :preg, :pregWks, :regi_id)
+      params.require(:patient).permit(:vDate, :mStat, :height, :weight, :street, :city, :state, :zip, :cell, :home, :work, :email, :referred, :com1, :com2, :com3, :dOnset, :painScale, :dLost, :dRestd, :cOnset, :better, :worse, :oDrs, :oDrsWhen, :pcpNm, :hosp, :hWhen, :diagGiven, :diagWhere, :aqB4, :aqrist, :aqWhere, :oDis, :injSurg, :medTaken, :alcohol, :tobacco, :lastPrd, :preg, :pregWks, :regi_id, diList:[] )
     end
 end

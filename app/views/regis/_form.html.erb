@@ -55,13 +55,12 @@
       <%= form.date_field :dob, placeholder: "MM/DD/YYYY", class:"form-control border-primary" %>
     </div>
   </div>
-  <br>
   <div>
     <div class="btn-group" role="group"> 
       <%= form.submit "Submit", class: "btn btn-sm btn-primary m-2" %>
 <% end %>      
-      <%= button_to "Delete this", @regi, method: :delete, class:"btn btn-sm btn-danger m-2" %>
-      <%= link_to "Return", regis_path, class:"btn btn-sm btn-info m-2" %>
+      <%= button_to "Delete", @regi, method: :delete, class:"btn btn-sm btn-danger m-2" %>
+      <%= link_to "Return", regis_path, class:"btn btn-sm btn-success m-2" %>
     </div>
   </div>
 

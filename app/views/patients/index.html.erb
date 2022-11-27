@@ -1,103 +1,59 @@
-<h1>Listing patients</h1>
+<h1 class="text-center">Patient Record</h1>
+<%= render 'layouts/identifier' %>
 
-<table>
-  <tr>
-    <th>Vdate</th>
-    <th>Mstat</th>
-    <th>Height</th>
-    <th>Weight</th>
-    <th>Street</th>
-    <th>City</th>
-    <th>State</th>
-    <th>Zip</th>
-    <th>Cell</th>
-    <th>Home</th>
-    <th>Work</th>
-    <th>Email</th>
-    <th>Referred</th>
-    <th>Com1</th>
-    <th>Com2</th>
-    <th>Com3</th>
-    <th>Donset</th>
-    <th>Painscale</th>
-    <th>Dlost</th>
-    <th>Drestd</th>
-    <th>Conset</th>
-    <th>Better</th>
-    <th>Worse</th>
-    <th>Odrs</th>
-    <th>Odrswhen</th>
-    <th>Pcpnm</th>
-    <th>Hosp</th>
-    <th>Hwhen</th>
-    <th>Diaggiven</th>
-    <th>Diagwhere</th>
-    <th>Aqb4</th>
-    <th>Aqrist</th>
-    <th>Aqwhere</th>
-    <th>Dilist</th>
-    <th>Odis</th>
-    <th>Injsurg</th>
-    <th>Medtaken</th>
-    <th>Lastprd</th>
-    <th>Preg</th>
-    <th>Pregwks</th>
-    <th>Regi</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<%= link_to 'New Record', new_regi_patient_path, class:'btn btn-outline-dark m-1' %>
+<%= link_to 'Patient Charts', regi_charts_path, class:"btn btn-outline-success m-1" %>
+<%= link_to 'Patient Listing', regis_path, class:"btn btn-outline-primary m-1" %>
 
-<% @patients.each do |patient| %>
-  <tr>
-    <td><%= patient.vDate %></td>
-    <td><%= patient.mStat %></td>
-    <td><%= patient.height %></td>
-    <td><%= patient.weight %></td>
-    <td><%= patient.street %></td>
-    <td><%= patient.city %></td>
-    <td><%= patient.state %></td>
-    <td><%= patient.zip %></td>
-    <td><%= patient.cell %></td>
-    <td><%= patient.home %></td>
-    <td><%= patient.work %></td>
-    <td><%= patient.email %></td>
-    <td><%= patient.referred %></td>
-    <td><%= patient.com1 %></td>
-    <td><%= patient.com2 %></td>
-    <td><%= patient.com3 %></td>
-    <td><%= patient.dOnset %></td>
-    <td><%= patient.painScale %></td>
-    <td><%= patient.dLost %></td>
-    <td><%= patient.dRestd %></td>
-    <td><%= patient.cOnset %></td>
-    <td><%= patient.better %></td>
-    <td><%= patient.worse %></td>
-    <td><%= patient.oDrs %></td>
-    <td><%= patient.oDrsWhen %></td>
-    <td><%= patient.pcpNm %></td>
-    <td><%= patient.hosp %></td>
-    <td><%= patient.hWhen %></td>
-    <td><%= patient.diagGiven %></td>
-    <td><%= patient.diagWhere %></td>
-    <td><%= patient.aqB4 %></td>
-    <td><%= patient.aqrist %></td>
-    <td><%= patient.aqWhere %></td>
-    <td><%= patient.diList %></td>
-    <td><%= patient.oDis %></td>
-    <td><%= patient.injSurg %></td>
-    <td><%= patient.medTaken %></td>
-    <td><%= patient.lastPrd %></td>
-    <td><%= patient.preg %></td>
-    <td><%= patient.pregWks %></td>
-    <td><%= patient.regi %></td>
-    <td><%= link_to 'Show', [patient.regi, patient] %></td>
-    <td><%= link_to 'Edit', edit_regi_patient_path(patient.regi, patient) %></td>
-    <td><%= link_to 'Destroy', [patient.regi, patient], method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
+<table class="table table-striped table-hover mt-1">
+  <thead class="table-primary">
+   <tr>
+      <th style="width:105px">Updated on</th>
+      <th>Contact Info</th>
+      <th>Weight</th>
+      <th>Complaints</th>
+      <th>Onset/Pain</th>
+      <th>PCP</th>
+      <th>Health History</th>
+      <th></th>
+    </tr>
+  </thead>
+  </tbody>
+
+    <% @regi.patients.all.sort_by{ |h| h[:vDate]}.reverse.each do |patient| %>
+      <tr>
+        <td>
+          <%= link_to patient.vDate, regi_patient_path(@regi,patient) %>
+        </td>  
+        <td>
+          <%= patient.street %><%= ', ' if patient.street? %>
+          <%= patient.city %>
+          <%= patient.state %>
+          <%= patient.zip %>
+          <%= 'C:' if patient.cell? %><%= patient.cell %>
+          <%= 'H:' if patient.home? %><%= patient.home %>
+          <%= 'W:' if patient.work? %><%= patient.work %>
+          <%= 'E:' if patient.email? %><%= patient.email %>
+        </td>
+        <td>
+          <%= patient.weight %>
+        </td>
+        <td>
+          <%= patient.com1 %><%= ', ' if patient.com2? %>
+          <%= patient.com2 %><%= ', ' if patient.com3? %>
+          <%= patient.com3 %>
+        </td>
+        <td>
+          <%= patient.dOnset %><%= '/Pain: ' if patient.painScale? %>
+          <%= patient.painScale %>
+        </td>
+        <td><%= patient.pcpNm %></td>
+        <td>
+          <%= patient.diList %><%= ', ' if patient.oDis? %>
+          <%= patient.oDis %><%= ', Preg' if patient.preg == 'Yes' %>
+        </td>
+        <td><% patient.regi %></td>
+      </tr>
+    <% end %>
+  </tbody>
 </table>
-
-<br />
-
-<%= link_to 'New Patient', new_regi_patient_path(params[:regi_id]) %>
