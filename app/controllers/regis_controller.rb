@@ -3,7 +3,8 @@ class RegisController < ApplicationController
 
   # GET /regis or /regis.json
   def index
-    @regis = Regi.all
+    @q = Regi.ransack(params[:q])
+    @regis = @q.result(distinct: true)
   end
 
   # GET /regis/1 or /regis/1.json

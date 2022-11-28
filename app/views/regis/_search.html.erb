@@ -1,0 +1,23 @@
+<%= link_to "Search Patient", "#offcanvasExample", data: { bs_toggle: "offcanvas" }, area: { controls: "offcanvasExample" }, role: "button", class: "btn btn-sm btn-outline-primary" %>
+  <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasExampleLabel">Search Patients Here</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <%= search_form_for @q do |f| %>
+        <div class="form-group">
+          <b><%= f.label :by_lastNm_or_firstNm_cont, "By First Name or Last Name", class: "form-label" %></b>
+          <%= f.search_field :lastNm_or_firstNm_cont, class:"form-control border-primary mb-3" %>
+        </div>
+        <div class="form-group">
+          <b><%= f.label :by_gender_eq, "By Gender", class: "form-label" %></b>
+          <%= f.search_field :gender_eq, class:"form-control border-primary mb-3" %>
+        </div>
+        <div class="form-group">
+          <%= f.submit "Search Patient", class: 'btn btn-sm btn-outline-dark' %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+<%= link_to "Reset", regis_path, class: "btn btn-sm btn-outline-success ps-5 pe-5 m-1" %>
