@@ -62,6 +62,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_26_034323) do
     t.string "oDis"
     t.string "injSurg"
     t.string "medTaken"
+    t.string "alcohol", limit: 225
+    t.string "tobacco", limit: 225
     t.date "lastPrd"
     t.string "preg"
     t.integer "pregWks"
