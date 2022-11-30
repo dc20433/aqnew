@@ -3,18 +3,18 @@ Rails.application.routes.draw do
     resources :charts
     resources :patients
   end
+  
+  devise_for :users, controllers: {
+    sessions: 'users/sessions',
+    passwords: 'users/passwords',
+    registrations: 'users/registrations',
+    confirmations: 'users/confirmations'
+  }
 
   get "consent" => 'sites#consent'
-  get "signup" => "users#new"
-  get "login" => "sessions#new"
-  get "logout" => "sessions#destroy"
-
-
+  
   resources :users
   resources :sessions, except: [:edit, :update, :show, :new, :destroy]
 
 root 'sites#home'
-
-  # Defines the root path route ("/")
-  # root "articles#index"
 end
