@@ -1,4 +1,4 @@
-<div class="col-4 mx-auto mt-3">
+<div class="col-7 mx-auto mt-3">
   <div class="card shadow border-dark">
     <div class="card-header">
       <h2 class="card-title text-center">Sign up</h2>
@@ -11,27 +11,57 @@
         <div class='form-group'>
           <div class='row mb-3'>
             <div class='col-2'>
-              <%= f.label :email, class:'pt-2' %>
+              <b><%= f.label :name, class:'pt-2' %></b>
+            </div>
+            <div class='col-10'>
+              <%= f.text_field :name, class:'form-control border-primary' %>
+            </div>
+        </div>
+        
+        <div class='form-group'>
+          <div class='row mb-3'>
+            <div class='col-2'>
+             <b><%= f.label :contactN, "Contact N.", class:'pt-2' %></b>
+            </div>
+            <div class='col-10'>
+              <%= f.text_field :contactN, placeholder:'123-456-7890', class:'form-control border-primary' %>
+            </div>
+        </div>
+        
+        <div class='form-group'>
+          <div class='row mb-3'>
+            <div class='col-2'>
+             <b><%= f.label :userNm, "Username", class:'pt-2' %></b>
+            </div>
+            <div class='col-10'>
+              <%= f.text_field :userNm, class:'form-control border-primary' %>
+            </div>
+        </div>
+
+        <div class='form-group'>
+          <div class='row mb-3'>
+            <div class='col-2'>
+             <b><%= f.label :email, class:'pt-2' %></b>
             </div>
             <div class='col-10'>
               <%= f.email_field :email, autofocus: true, autocomplete: "email", class:'form-control border-primary' %>
             </div>
         </div>
 
-        <div class="field">
-          <%= f.label :password %>
+        <div class='form-group'>
+          <b><%= f.label :password %></b>
           <% if @minimum_password_length %>
           <em>(<%= @minimum_password_length %> characters minimum)</em>
           <% end %>
           <%= f.password_field :password, autocomplete: "new-password", class:'form-control border-primary mb-2' %>
         </div>
 
-        <div class="field">
-          <%= f.label :password_confirmation %>
+        <div class='form-group'>
+          <b><%= f.label :password_confirmation %></b>
           <%= f.password_field :password_confirmation, autocomplete: "new-password", class:'form-control border-primary mb-2' %>
         </div>
 
-        <div class="actions">
+        <div class='form-group'>
           <%= f.submit "Submit", class:'btn btn-sm btn-primary mt-2 mb-2' %>
         </div>
       <% end %>

@@ -7,5 +7,23 @@ class User < ApplicationRecord
          :rememberable, 
          :validatable,
          :confirmable,
-         :trackable
+         :trackable,
+         authentication_keys: [:login]
+
+  validates :userNm, presence: true, uniqueness: true
+
+  attr_accessor :login
+
+  def login
+    @login || self.userNm || self.email
+  end
+
+  def self.find_for_database_authentication(warden_condition)
+    conditions = warden_condition.dup
+    if(login = conditions.delete(:login)) 
+      where(conditions.to_h).where(["lower(userNm) = :value OR lower(email) = :value", { value: login.downcase }]).first
+    elsif conditions.has_key?(:userNm) || conditions.has_key?(:email)
+      where(conditions.to_h).first
+    end
+  end
 end

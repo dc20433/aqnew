@@ -1,4 +1,29 @@
-<section class="text-center">
-<h1 class="mt-5 mb-5 pt-5">Welcome to Zhang's Acupuncture Inc.<h1>
-<h3>Please log in to proceed<h3>
-</section>
+<%# image_tag('assets/image/.jpg', style: "height: 30px; width: 30px") %>
+<style>
+.screen {
+  background-image: url('pine_trees.jpg');
+  background-size: cover;
+  min-height: 90vh;
+  position: relative;
+  color: black;
+  Text-shadow: 4px 4px 4px rgba(0,0,0,.2);
+}
+h6 {
+  font-size: 4rem;
+  color: blue;
+}
+.color-overlay {
+  position: absolute;
+  width: 100%;
+  height: 93%;
+}
+</style>
+
+
+<div 
+  class="screen"
+  style="background-image: url(<%= asset_path 'pine_trees.jpg' %> );">
+  <div class="color-overlay d-flex justify-content-center align-items-center">
+    <b><h6>Welcome to Zhang's Acupuncture<h6></b>
+  </div>
+</div>
