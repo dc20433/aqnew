@@ -1,4 +1,5 @@
 class RegisController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_regi, only: %i[ show edit update destroy ]
 
   # GET /regis or /regis.json
