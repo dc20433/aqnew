@@ -1,0 +1,32 @@
+
+<h1 class="text-center">Permitted Users</h1>
+
+  <div class="button-row">
+    <%= link_to "New User", new_user_path, class:"btn btn-sm btn-outline-success" %>
+    <%= link_to "Patient Listing", regis_path, class:"btn btn-sm btn-outline-primary" %>
+  </div>
+
+<table class="table table-striped table-hover mx-auto mt-1">
+  <thead class="table-primary">
+    <tr>
+      <th class="col col-md-2">Name</th>
+      <th class="col col-md-2">Username</th>
+      <th class="col col-md-2">Email</th>
+      <th class="col col-md-1">Signin?</th>
+      <th class="col col-md-3">At time</th>
+      <th class="col col-md-1">Count</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.all.sort_by{ |h| h[:name] }.each do |user| %>
+    <tr>
+      <td><%= link_to_unless_current user.name, user_path(user.id) %></td>
+      <td><%= user.userNm %></td>
+      <td><%= user.email %></td>
+      <td><%= user.name == current_user.name ? "Yes" : "No" %></td>
+      <td><%= user.current_sign_in_at %></td>
+      <td><%= user.sign_in_count %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

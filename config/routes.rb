@@ -10,8 +10,12 @@ Rails.application.routes.draw do
     registrations: 'users/registrations',
     confirmations: 'users/confirmations'
   }
-
+  
   get "consent" => 'sites#consent'
+  get 'users/index' => 'users#index'
+  get 'users/new' => 'users#new'
+  get 'users/show' => 'users#show'
+  get 'users/edit' => 'users#edit'
   
   resources :users
   resources :sessions, except: [:edit, :update, :show, :new, :destroy]

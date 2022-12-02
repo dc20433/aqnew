@@ -217,7 +217,7 @@
     </div>
   </div>
   <div class="btn-group" role="group">
-    <%= f.submit "Update", class:'btn btn-primary btn-sm m-2' %>
+    <%= f.submit "Update", data: { burbo: false}, class:'btn btn-primary btn-sm m-2' %>
 <% end %>    
     <%= button_to 'Delete', [@regi,@patient], method: :delete, class:"btn btn-danger btn-sm m-2 mt-2", form: { data: { turbo_confirm: 'Are you sure?' }  } %>
     <%= link_to "Return", regi_patients_path, class:'btn btn-success btn-sm m-2' %>
