@@ -10,7 +10,11 @@ class Users::SessionsController < Devise::SessionsController
 
   # POST /resource/sign_in
   def create
-    super
+    if current_user
+      redirect_to regis_path
+    else
+      redirect_to root_path, alert: "Invalid login. Please try again..."
+    end
   end
 
   # DELETE /resource/sign_out
