@@ -1,6 +1,9 @@
-<h1 class="text-center">Edit Patient Information</h1>
-<%= render 'layouts/identifier' %>
+<% if (current_user && current_user.manager?) || (current_user && current_user.admin?) %>
 
-<%= link_to 'Patient Info', regi_patients_path, class:'btn btn-info btn-sm' %>
+  <h1 class="text-center">Edit Patient Information</h1>
+  <%= render 'layouts/identifier' %>
+  <%= link_to 'Patient Info', regi_patients_path, class:'btn btn-info btn-sm' %>
+  <%= render 'form' %>
+  
+<% end %>
 
-<%= render 'form' %>

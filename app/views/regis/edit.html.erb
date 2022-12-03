@@ -1,2 +1,5 @@
+<% if (current_user && current_user.manager?) || (current_user && current_user.admin?) %>
 
-<%= render "display" %>
+  <%= render "display" %>
+  
+<% end %>

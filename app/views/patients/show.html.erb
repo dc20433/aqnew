@@ -1,4 +1,7 @@
-<h1 class="text-center">Patient Record</h1>
-  <%= render 'layouts/identifier' %>
+<% if (current_user && current_user.manager?) || (current_user && current_user.admin?) %>
 
+  <h1 class="text-center">Patient Record</h1>
+  <%= render 'layouts/identifier' %>
   <%= render 'form' %>
+  
+<% end %>

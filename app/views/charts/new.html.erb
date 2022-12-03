@@ -1,8 +1,11 @@
-<h1 class="text-center">Create New Chart</h1>
-<%= render 'layouts/identifier' %>
+<% if (current_user && current_user.manager?) || (current_user && current_user.admin?) %>
 
-<% if defined?(Chart.where(regi_id: params[:regi_id]).last.id) %>
-  <%= render 'chart' %>
-<% else %>
-  <%= render 'form' %>
+  <h1 class="text-center">Create New Chart</h1>
+  <%= render 'layouts/identifier' %>
+  <% if defined?(Chart.where(regi_id: params[:regi_id]).last.id) %>
+    <%= render 'chart' %>
+  <% else %>
+    <%= render 'form' %>
+  <% end %>
+  
 <% end %>
