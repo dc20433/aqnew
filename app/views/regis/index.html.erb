@@ -1,34 +1,38 @@
-<h1 class="text-center">Patient Listing</h1>
+<% if (current_user && current_user.manager?) || (current_user && current_user.admin?) %>
 
-<%= link_to "New Patient", new_regi_path, class: "btn btn-sm btn-outline-dark ps-3 pe-3" %>
-<%# link_to "Users", users_path, class: "btn btn-outline-info col-md-2" %>
-<%= render 'search' %>
+  <h1 class="text-center">Patient Listing</h1>
 
-<table class="table table-sm table-striped table-hover mt-1">
-  <thead class="table-primary">
+  <%= link_to "New Patient", new_regi_path, class: "btn btn-sm btn-outline-dark ps-3 pe-3" %>
+  <%# link_to "Users", users_path, class: "btn btn-outline-info col-md-2" %>
+  <%= render 'search' %>
+
+  <table class="table table-sm table-striped table-hover mt-1">
+    <thead class="table-primary">
+      <tr>
+        <th>Last Name</th>
+        <th>First Name</th>
+        <th>M. Initial</th>
+        <th>Gender</th>
+        <th>Date of Birth</th>
+        <th style="width:150px"></th>
+      </tr>
+    </thead>
+  <% @regis.order('lastNm ASC').each do |regi| %>
+
     <tr>
-      <th>Last Name</th>
-      <th>First Name</th>
-      <th>M. Initial</th>
-      <th>Gender</th>
-      <th>Date of Birth</th>
-      <th style="width:150px"></th>
+      <td><%= link_to regi.lastNm, regi_path(regi.id) %></td>
+      <td><%= regi.firstNm %></td>
+      <td><%= regi.init %></td>
+      <td><%= regi.gender %></td>
+      <td><%= regi.dob %></td>
+      
+      <td>
+      <%= link_to 'Records', regi_patients_path(regi.id), class: "btn btn-outline-primary btn-sm" %>
+      <%= link_to 'Charts', regi_charts_path(regi.id), class: "btn btn-outline-success btn-sm" %>
+      </td>
+
     </tr>
-  </thead>
-<% @regis.order('lastNm').each do |regi| %>
+    <% end %>
+  </table>
 
-  <tr>
-    <td><%= link_to regi.lastNm, regi_path(regi.id) %></td>
-    <td><%= regi.firstNm %></td>
-    <td><%= regi.init %></td>
-    <td><%= regi.gender %></td>
-    <td><%= regi.dob %></td>
-    
-    <td>
-    <%= link_to 'Records', regi_patients_path(regi.id), class: "btn btn-outline-primary btn-sm" %>
-    <%= link_to 'Charts', regi_charts_path(regi.id), class: "btn btn-outline-success btn-sm" %>
-    </td>
-
-  </tr>
-  <% end %>
-</table>
+<% end %>

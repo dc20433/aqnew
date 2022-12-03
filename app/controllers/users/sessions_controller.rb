@@ -11,7 +11,7 @@ class Users::SessionsController < Devise::SessionsController
   # POST /resource/sign_in
   def create
     if current_user
-      redirect_to regis_path
+      redirect_to root_path
     else
       redirect_to root_path, alert: "Invalid login. Please try again..."
     end
@@ -26,6 +26,6 @@ class Users::SessionsController < Devise::SessionsController
 
   # If you have extra params to permit, append them to the sanitizer.
   def configure_sign_in_params
-    devise_parameter_sanitizer.permit(:sign_in, keys: [:name, :userNm, :email, :password, :password_confirmation])
+    devise_parameter_sanitizer.permit(:sign_in, keys: [:name, :userNm, :email, :role, :password, :password_confirmation])
   end
 end

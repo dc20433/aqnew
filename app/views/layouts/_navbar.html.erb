@@ -7,17 +7,18 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        
-        <%= link_to "Insurance", "#", class:"nav-link active" %>
-        <%= link_to "Consent Form", consent_path, class:"nav-link active" %>
+        <% if current_user %>
+          <%= link_to "Insurance", "#", class:"nav-link active" %>
+          <%= link_to "Consent Form", consent_path, class:"nav-link active" %>
+        <% end %>
 
         <li class="nav-item">
-            <% if current_user %>
+            <% if (current_user && current_user.admin?) || (current_user && current_user.manager?)  %>
               <%= link_to "Patients", regis_path, class:"nav-link active" %>
             <% end %>
             </li>
         <li class="nav-item">
-          <% if current_user %>
+          <% if current_user && current_user.admin? %>
             <%= link_to "Users", users_path, class:"nav-link active" %>
           <% end %>
         </li> 

@@ -10,7 +10,16 @@ class User < ApplicationRecord
          :trackable,
          authentication_keys: [:login]
 
+  validates :name, presence: true
+  validates :role, presence: true
   validates :userNm, presence: true, uniqueness: true
+  validates :email, presence: true, uniqueness: true, format: { with: /@./, message: "Not a valid email address" }
+
+  enum role: [:patient, :manager, :admin]
+  after_initialize :set_default_role, :if => :new_record?
+  def set_default_role
+    self.role ||= :patient
+  end  
 
   attr_accessor :login
 

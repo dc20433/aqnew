@@ -1,160 +1,160 @@
-<% @p = Patient.where(regi_id: params[:regi_id]).sort_by{ |h| h[:vDate]} %>
+<% @p = Patient.where(regi_id: params[:regi_id]).order('vDate DESC') %>
 
 <%= form_with(model: [@regi,@patient]) do |f| %>
 
   <div class="row">
     <div class="col-md-2">
       <b><%= f.label :vDate, "Updated on", class:"form-label" %></b>
-      <%= f.date_field :vDate, value: @p.last.vDate, class: "form-control border-primary" %>
+      <%= f.date_field :vDate, value: @p.last.vDate, class: "form-control form-control-sm border-primary" %>
     </div>
     <div class="col-md-5">
       <b><%= f.label :street, "Street", class:"form-label" %></b>
-      <%= f.text_field :street, value: @p.last.street, class: "form-control border-primary" %>
+      <%= f.text_field :street, value: @p.last.street, class: "form-control form-control-sm border-primary" %>
     </div>
     <div class="col-md-2">
       <b><%= f.label :city, "City", class:"form-label" %></b>
-      <%= f.text_field :city, value: @p.last.city, class: "form-control border-primary" %>
+      <%= f.text_field :city, value: @p.last.city, class: "form-control form-control-sm border-primary" %>
     </div>
     <div class="col-md-1">
       <b><%= f.label :state, "State", class:"form-label" %></b>
-      <%= f.text_field :state, value: @p.last.state, class: "form-control border-primary" %>
+      <%= f.text_field :state, value: @p.last.state, class: "form-control form-control-sm border-primary" %>
     </div>
     <div class="col-md-2">
       <b><%= f.label :zip, "Zip Code", class:"form-label" %></b>
-      <%= f.text_field :zip, value: @p.last.zip, class: "form-control border-primary" %>
+      <%= f.text_field :zip, value: @p.last.zip, class: "form-control form-control-sm border-primary" %>
     </div>
   </div>
 
   <div class="row">
     <div class="col-md-3">
       <b><%= f.label :height, "Height", class:"form-label" %></b>
-      <%= f.text_field :height, value: @p.last.height, class: "form-control border-primary" %>
+      <%= f.text_field :height, value: @p.last.height, class: "form-control form-control-sm border-primary" %>
     </div>
     <div class="col-md-3">
       <b><%= f.label :weight, "Weight", class:"form-label" %></b>
-      <%= f.text_field :weight, value: @p.last.weight, class: "form-control border-primary" %>
+      <%= f.text_field :weight, value: @p.last.weight, class: "form-control form-control-sm border-primary" %>
     </div>
     <div class="col-md-2">
       <b><%= f.label :mStat, "Marital Status", class:"form-label" %></b>
-      <%= f.select :mStat, Patient::MARITAL_STATUS, value: @p.last.mStat, class: "form-control block" %>
+      <%= f.select :mStat, Patient::MARITAL_STATUS, value: @p.last.mStat, class: "form-control form-control-sm block" %>
     </div>
     <div class="col-md-4">
       <b><%= f.label :referred, "Referred by", class:"form-label" %></b>
-      <%= f.text_field :referred, value: @p.last.referred, class: "form-control border-primary" %>
+      <%= f.text_field :referred, value: @p.last.referred, class: "form-control form-control-sm border-primary" %>
     </div> 
   </div>
 
   <div class="row">
     <div class="col-md-3">
       <b><%= f.label :cell, "Cell Phone", class:"form-label" %></b>
-      <%= f.text_field :cell, value: @p.last.cell, class: "form-control border-primary" %>
+      <%= f.text_field :cell, value: @p.last.cell, class: "form-control form-control-sm border-primary" %>
     </div>
     <div class="col-md-3">
       <b><%= f.label :home, "Home Phone", class:"form-label" %></b>
-      <%= f.text_field :home, value: @p.last.home, class: "form-control border-primary" %>
+      <%= f.text_field :home, value: @p.last.home, class: "form-control form-control-sm border-primary" %>
     </div>
     <div class="col-md-3">
       <b><%= f.label :work, "Work Phone", class:"form-label" %></b>
-      <%= f.text_field :work, value: @p.last.work, class: "form-control border-primary" %>
+      <%= f.text_field :work, value: @p.last.work, class: "form-control form-control-sm border-primary" %>
     </div>
     <div class="col-md-3">
       <b><%= f.label :email, "Email", class:"form-label" %></b>
-      <%= f.email_field :email, value: @p.last.email, class: "form-control border-primary" %>
+      <%= f.email_field :email, value: @p.last.email, class: "form-control form-control-sm border-primary" %>
     </div>
   </div>
 
   <div class="row">
     <div class="col-md-4">
       <b><%= f.label :com1, "Complaint 1", class:"form-label" %></b>
-      <%= f.text_field :com1, value: @p.last.com1, class: "form-control border-primary" %>
+      <%= f.text_field :com1, value: @p.last.com1, class: "form-control form-control-sm border-primary" %>
     </div>
     <div class="col-md-4">
       <b><%= f.label :com2, "Complaint 2", class:"form-label" %></b>
-      <%= f.text_field :com2, value: @p.last.com2, class: "form-control border-primary" %>
+      <%= f.text_field :com2, value: @p.last.com2, class: "form-control form-control-sm border-primary" %>
     </div>
     <div class="col-md-4">
       <b><%= f.label :com3, "Complaint 3", class:"form-label" %></b>
-      <%= f.text_field :com3, value: @p.last.com3, class: "form-control border-primary" %>
+      <%= f.text_field :com3, value: @p.last.com3, class: "form-control form-control-sm border-primary" %>
     </div>
   </div>
 
   <div class="row">
     <div class="col-md-3">
       <b><%= f.label :dOnset, "Date Onset", class:"form-label" %></b>
-      <%= f.date_field :dOnset, value: @p.last.dOnset, class: "form-control border-primary" %>
+      <%= f.date_field :dOnset, value: @p.last.dOnset, class: "form-control form-control-sm border-primary" %>
     </div>
     <div class="col-md-2">
       <b><%= f.label :painScale, "Pain Scale 1-10", class:"form-label" %></b>
-      <%= f.number_field :painScale, in: 0..10, value: @p.last.painScale, class: "form-control border-primary" %>
+      <%= f.number_field :painScale, in: 0..10, value: @p.last.painScale, class: "form-control form-control-sm border-primary" %>
     </div>
     <div class="col-md-2">
       <b><%= f.label :dLost, "Work-days Lost", class:"form-label" %></b>
-      <%= f.number_field :dLost, in: 0..100, value: @p.last.dLost, class: "form-control border-primary" %>
+      <%= f.number_field :dLost, in: 0..100, value: @p.last.dLost, class: "form-control form-control-sm border-primary" %>
     </div>
     <div class="col-md-2">
       <b><%= f.label :dRestd, "Days Restricted", class:"form-label" %></b>
-      <%= f.number_field :dRestd, in: 0..100, value: @p.last.dRestd, class: "form-control border-primary" %>
+      <%= f.number_field :dRestd, in: 0..100, value: @p.last.dRestd, class: "form-control form-control-sm border-primary" %>
     </div>
     <div class="col-md-3">
       <b><%= f.label :cOnset, "Conditions Onset", class:"form-label" %></b>
-      <%= f.text_field :cOnset, value: @p.last.cOnset, class: "form-control border-primary" %>
+      <%= f.text_field :cOnset, value: @p.last.cOnset, class: "form-control form-control-sm border-primary" %>
     </div>
   </div>
 
   <div class="row">
     <div class="col-md-6">
       <b><%= f.label :better, "What makes it better?", class:"form-label" %></b>
-      <%= f.text_field :better, value: @p.last.better, class: "form-control border-primary" %>
+      <%= f.text_field :better, value: @p.last.better, class: "form-control form-control-sm border-primary" %>
     </div>
     <div class="col-md-6">
       <b><%= f.label :worse, "What makes it worse?", class:"form-label" %></b>
-      <%= f.text_field :worse, value: @p.last.worse, class: "form-control border-primary" %>
+      <%= f.text_field :worse, value: @p.last.worse, class: "form-control form-control-sm border-primary" %>
     </div>
   </div>
 
   <div class="row">
     <div class="col-md-2">
       <b><%= f.label :oDrs, "Seen other Drs?", class:"form-label" %></b>
-      <%= f.select :oDrs, Patient::SEEN_DR, value: @p.last.oDrs, class: "form-control border-primary" %>
+      <%= f.select :oDrs, Patient::SEEN_DR, value: @p.last.oDrs, class: "form-control form-control-sm border-primary" %>
     </div>
     <div class="col-md-2">
       <b><%= f.label :oDrsWhen, "When?", class:"form-label" %></b>
-      <%= f.date_field :oDrsWhen, value: @p.last.oDrsWhen, class: "form-control border-primary" %>
+      <%= f.date_field :oDrsWhen, value: @p.last.oDrsWhen, class: "form-control form-control-sm border-primary" %>
     </div>
     <div class="col-md-4">
       <b><%= f.label :pcpNm, "Prim.Care Dr. Name", class:"form-label" %></b>
-      <%= f.text_field :pcpNm, value: @p.last.pcpNm, class: "form-control border-primary" %>
+      <%= f.text_field :pcpNm, value: @p.last.pcpNm, class: "form-control form-control-sm border-primary" %>
     </div>
     <div class="col-md-2">
       <b><%= f.label :hosp, "Hospitalized?", class:"form-label" %></b>
-      <%= f.select :hosp, Patient::HOSPITALIZED, value: @p.last.hosp, class: "form-control border-primary" %>
+      <%= f.select :hosp, Patient::HOSPITALIZED, value: @p.last.hosp, class: "form-control form-control-sm border-primary" %>
     </div>
     <div class="col-md-2">
       <b><%= f.label :hWhen, "When?", class:"form-label" %></b>
-      <%= f.date_field :hWhen, value: @p.last.hWhen, class: "form-control border-primary" %>
+      <%= f.date_field :hWhen, value: @p.last.hWhen, class: "form-control form-control-sm border-primary" %>
     </div>
   </div>
 
   <div class="row">
     <div class="col-md-4">
       <b><%= f.label :diagGiven, "Diagnoses given?", class:"form-label" %></b>
-      <%= f.text_field :diagGiven, value: @p.last.diagGiven, class: "form-control border-primary" %>
+      <%= f.text_field :diagGiven, value: @p.last.diagGiven, class: "form-control form-control-sm border-primary" %>
     </div>
     <div class="col-md-2">
       <b><%= f.label :diagWhere, "Where", class:"form-label" %></b>
-      <%= f.text_field :diagWhere, value: @p.last.diagWhere, class: "form-control border-primary" %>
+      <%= f.text_field :diagWhere, value: @p.last.diagWhere, class: "form-control form-control-sm border-primary" %>
     </div>
     <div class="col-md-2">
       <b><%= f.label :aqB4, "Acupunture before?", class:"form-label" %></b>
-      <%= f.select :aqB4, Patient::ACU_BEFORE, value: @p.last.aqB4, class: "form-control border-primary" %>
+      <%= f.select :aqB4, Patient::ACU_BEFORE, value: @p.last.aqB4, class: "form-control form-control-sm border-primary" %>
     </div>
     <div class="col-md-2">
       <b><%= f.label :aqrist, "Name of Dr?", class:"form-label" %></b>
-      <%= f.text_field :aqrist, value: @p.last.aqrist, class: "form-control border-primary" %>
+      <%= f.text_field :aqrist, value: @p.last.aqrist, class: "form-control form-control-sm border-primary" %>
     </div>
     <div class="col-md-2">
       <b><%= f.label :aqWhere, "Where", class:"form-label" %></b>
-      <%= f.text_field :aqWhere, value: @p.last.aqWhere, class: "form-control border-primary" %>
+      <%= f.text_field :aqWhere, value: @p.last.aqWhere, class: "form-control form-control-sm border-primary" %>
     </div>
   </div>
 
@@ -172,39 +172,39 @@
   <div class="row">
     <div class="col-md-4">
       <b><%= f.label :oDis, "Other Issues", class:"form-label" %></b>
-      <%= f.text_field :oDis, value: @p.last.oDis, class: "form-control border-primary" %>
+      <%= f.text_field :oDis, value: @p.last.oDis, class: "form-control form-control-sm border-primary" %>
     </div>
     <div class="col-md-4">
       <b><%= f.label :injSurg, "Major Injuries/Surgeries", class:"form-label" %></b>
-      <%= f.text_field :injSurg, value: @p.last.injSurg, class: "form-control border-primary" %>
+      <%= f.text_field :injSurg, value: @p.last.injSurg, class: "form-control form-control-sm border-primary" %>
     </div>
     <div class="col-md-4">
       <b><%= f.label :medTaken, "Medicines Currently Taken", class:"form-label" %></b>
-      <%= f.text_field :medTaken, value: @p.last.medTaken, class: "form-control border-primary" %>
+      <%= f.text_field :medTaken, value: @p.last.medTaken, class: "form-control form-control-sm border-primary" %>
     </div>
   </div>
  
   <div class="row">
     <div class="col-md-2">
       <b><%= f.label :alcohol, "Alcohol: How much?", class:"form-label" %></b>
-      <%= f.text_field :alcohol, class: "form-control border-primary", value: @p.last.alcohol %>
+      <%= f.text_field :alcohol, class: "form-control form-control-sm border-primary", value: @p.last.alcohol %>
     </div>
     <div class="col-md-2">
     <b><%= f.label :tobacco, "Tobacco: How much?", class:"form-label" %></b>
-    <%= f.text_field :tobacco, class: "form-control border-primary", value: @p.last.tobacco %>
+    <%= f.text_field :tobacco, class: "form-control form-control-sm border-primary", value: @p.last.tobacco %>
     </div>
     <div class="col-md-4">
       <i>For female only:</i> 
       <b><%= f.label :lastPrd, "When was your last period?", class:"form-label" %></b>
-      <%= f.date_field :lastPrd, value: @p.last.lastPrd, class: "form-control border-primary" %>
+      <%= f.date_field :lastPrd, value: @p.last.lastPrd, class: "form-control form-control-sm border-primary" %>
     </div>
     <div class="col-md-2">
       <b><%= f.label :preg, "Are you pregnant?", class:"form-label" %></b>
-      <%= f.select :preg, Patient::PREG, value: @p.last.preg, class: "form-control border-primary" %>
+      <%= f.select :preg, Patient::PREG, value: @p.last.preg, class: "form-control form-control-sm border-primary" %>
     </div>
     <div class="col-md-2">
       <b><%= f.label :pregWks, "How many weeks?", class:"form-label" %></b>
-      <%= f.number_field :pregWks, value: @p.last.pregWks, class: "form-control border-primary" %>
+      <%= f.number_field :pregWks, value: @p.last.pregWks, class: "form-control form-control-sm border-primary" %>
     </div>
   </div>
   <div class="actions">

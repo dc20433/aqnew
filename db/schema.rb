@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_30_021937) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_02_211528) do
   create_table "charts", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.date "tDate"
     t.text "soap"
@@ -27,8 +27,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_30_021937) do
   create_table "patients", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.date "vDate"
     t.string "mStat"
-    t.decimal "height", precision: 10
-    t.decimal "weight", precision: 10
+    t.decimal "height", precision: 3, scale: 1
+    t.decimal "weight", precision: 4, scale: 1
     t.string "street"
     t.string "city"
     t.string "state"
@@ -101,6 +101,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_30_021937) do
     t.string "name"
     t.string "contactN"
     t.string "userNm"
+    t.integer "role", default: 0
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

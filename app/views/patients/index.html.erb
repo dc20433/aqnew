@@ -1,58 +1,62 @@
-<h1 class="text-center">Patient Record</h1>
-<%= render 'layouts/identifier' %>
+<% if (current_user && current_user.manager?) || (current_user && current_user.admin?) %>
 
-<%= link_to 'New Record', new_regi_patient_path, class:'btn btn-outline-dark m-1' %>
-<%= link_to 'Patient Charts', regi_charts_path, class:"btn btn-outline-success m-1" %>
+  <h1 class="text-center">Patient Record</h1>
+  <%= render 'layouts/identifier' %>
 
-<table class="table table-sm table-striped table-hover mt-1">
-  <thead class="table-primary">
-   <tr>
-      <th style="width:105px">Updated on</th>
-      <th>Contact Info</th>
-      <th>Weight</th>
-      <th>Complaints</th>
-      <th>Onset/Pain</th>
-      <th>PCP</th>
-      <th>Health History</th>
-      <th></th>
-    </tr>
-  </thead>
-  </tbody>
+  <%= link_to 'New Record', new_regi_patient_path, class:'btn btn-sm btn-outline-dark m-1' %>
+  <%= link_to 'Patient Charts', regi_charts_path, class:"btn btn-sm btn-outline-primary m-1" %>
 
-    <% @regi.patients.all.sort_by{ |h| h[:vDate]}.reverse.each do |patient| %>
-      <tr>
-        <td>
-          <%= link_to patient.vDate, regi_patient_path(@regi,patient) %>
-        </td>  
-        <td>
-          <%= patient.street %><%= ', ' if patient.street? %>
-          <%= patient.city %>
-          <%= patient.state %>
-          <%= patient.zip %>
-          <%= 'C:' if patient.cell? %><%= patient.cell %>
-          <%= 'H:' if patient.home? %><%= patient.home %>
-          <%= 'W:' if patient.work? %><%= patient.work %>
-          <%= 'E:' if patient.email? %><%= patient.email %>
-        </td>
-        <td>
-          <%= patient.weight %>
-        </td>
-        <td>
-          <%= patient.com1 %><%= ', ' if patient.com2? %>
-          <%= patient.com2 %><%= ', ' if patient.com3? %>
-          <%= patient.com3 %>
-        </td>
-        <td>
-          <%= patient.dOnset %><%= '/Pain: ' if patient.painScale? %>
-          <%= patient.painScale %>
-        </td>
-        <td><%= patient.pcpNm %></td>
-        <td>
-          <%= patient.diList %><%= ', ' if patient.oDis? %>
-          <%= patient.oDis %><%= ', Preg' if patient.preg == 'Yes' %>
-        </td>
-        <td><% patient.regi %></td>
+  <table class="table table-sm table-striped table-hover mt-1">
+    <thead class="table-primary">
+    <tr>
+        <th style="width:105px">Updated on</th>
+        <th>Contact Info</th>
+        <th>Weight</th>
+        <th>Complaints</th>
+        <th>Onset/Pain</th>
+        <th>PCP</th>
+        <th>Health History</th>
+        <th></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+    </tbody>
+
+      <% @regi.patients.order('vDate DESC').each do |patient| %>
+        <tr>
+          <td>
+            <%= link_to patient.vDate, regi_patient_path(@regi,patient) %>
+          </td>  
+          <td>
+            <%= patient.street %><%= ', ' if patient.street? %>
+            <%= patient.city %>
+            <%= patient.state %>
+            <%= patient.zip %>
+            <%= 'C:' if patient.cell? %><%= patient.cell %>
+            <%= 'H:' if patient.home? %><%= patient.home %>
+            <%= 'W:' if patient.work? %><%= patient.work %>
+            <%= 'E:' if patient.email? %><%= patient.email %>
+          </td>
+          <td>
+            <%= patient.weight %>
+          </td>
+          <td>
+            <%= patient.com1 %><%= ', ' if patient.com2? %>
+            <%= patient.com2 %><%= ', ' if patient.com3? %>
+            <%= patient.com3 %>
+          </td>
+          <td>
+            <%= patient.dOnset %><%= '/Pain: ' if patient.painScale? %>
+            <%= patient.painScale %>
+          </td>
+          <td><%= patient.pcpNm %></td>
+          <td>
+            <%= patient.diList %><%= ', ' if patient.oDis? %>
+            <%= patient.oDis %><%= ', Preg' if patient.preg == 'Yes' %>
+          </td>
+          <td><% patient.regi %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+<% end %>

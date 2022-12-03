@@ -14,7 +14,7 @@
               <b><%= f.label :name, class:'pt-2' %></b>
             </div>
             <div class='col-10'>
-              <%= f.text_field :name, class:'form-control border-primary' %>
+              <%= f.text_field :name, autofocus: true, autocomplete: "name", class:'form-control border-primary' %>
             </div>
         </div>
         
@@ -34,7 +34,7 @@
              <b><%= f.label :email, class:'pt-2' %></b>
             </div>
             <div class='col-10'>
-              <%= f.email_field :email, autofocus: true, autocomplete: "email", class:'form-control border-primary' %>
+              <%= f.email_field :email, class:'form-control border-primary' %>
             </div>
         </div>
 
