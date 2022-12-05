@@ -1,4 +1,4 @@
-<%= link_to "Search Patient", "#offcanvasExample", data: { bs_toggle: "offcanvas" }, area: { controls: "offcanvasExample" }, role: "button", class: "btn btn-sm btn-outline-primary" %>
+<%= link_to "Search Patient", "#offcanvasExample", data: { bs_toggle: "offcanvas" }, area: { controls: "offcanvasExample" }, role: "button", class: "btn btn-sm btn-outline-primary rounded-pill" %>
   <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
     <div class="offcanvas-header">
       <h5 class="offcanvas-title" id="offcanvasExampleLabel">Search Patients Here</h5>
@@ -15,9 +15,9 @@
           <%= f.search_field :gender_eq, class:"form-control form-control-sm border-primary mb-3" %>
         </div>
         <div class="form-group">
-          <%= f.submit "Search Patient", class: 'btn btn-sm btn-outline-dark' %>
+          <%= f.submit "Search Patient", class: 'btn btn-sm btn-outline-dark rounded-pill' %>
         </div>
       <% end %>
     </div>
   </div>
-<%= link_to "Reset", regis_path, class: "btn btn-sm btn-outline-success ps-5 pe-5 m-1" %>
+<%= link_to "Reset", regis_path, class: "btn btn-sm btn-outline-success ps-3 pe-3 m-1 rounded-pill" %>

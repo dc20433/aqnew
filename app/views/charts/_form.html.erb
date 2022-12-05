@@ -43,8 +43,8 @@
   </div>
   <br>
   <div class="btn-group" role="group">
-    <%= f.submit "Update", class: "btn btn-sm btn-primary m-2" %>
+    <%= f.submit "Update", class: "btn btn-sm btn-primary m-2 rounded-pill" %>
 <% end %>
-  <%= button_to "Delete", [@regi,@chart], method: :delete, class:"btn btn-sm btn-danger m-2", form: { data: { turbo_confirm: "Are you sure?" } } %>
-  <%= link_to 'Retun', regi_charts_path(@regi), class:"btn btn-sm btn-success m-2" %>
+  <%= button_to "Delete", [@regi,@chart], method: :delete, class:"btn btn-sm btn-danger m-2 rounded-pill", form: { data: { turbo_confirm: "Are you sure?" } } %>
+  <%= link_to 'Retun', regi_charts_path(@regi), class:"btn btn-sm btn-success m-2 rounded-pill" %>
   </div>

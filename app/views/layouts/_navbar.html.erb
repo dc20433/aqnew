@@ -39,7 +39,7 @@
 
       <li class="d-flex">
         <% if current_user %>
-          <p class="text-white bg-dark">Current User Name: <%= current_user.name %> | <%=current_user.role %></p>
+          <p class="text-white bg-dark p-4 pt-0 pb-1 rounded-pill"><%= current_user.name %> : <%=current_user.role %></p>
         <% end %>
       </li>
     </div>

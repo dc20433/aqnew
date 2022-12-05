@@ -2,7 +2,7 @@
 
   <h1 class="text-center">Patient Listing</h1>
 
-  <%= link_to "New Patient", new_regi_path, class: "btn btn-sm btn-outline-dark ps-3 pe-3" %>
+  <%= link_to "New Patient", new_regi_path, class: "btn btn-sm btn-outline-dark ps-3 pe-3 rounded-pill" %>
   <%# link_to "Users", users_path, class: "btn btn-outline-info col-md-2" %>
   <%= render 'search' %>
 
@@ -27,8 +27,8 @@
       <td><%= regi.dob %></td>
       
       <td>
-      <%= link_to 'Records', regi_patients_path(regi.id), class: "btn btn-outline-primary btn-sm" %>
-      <%= link_to 'Charts', regi_charts_path(regi.id), class: "btn btn-outline-success btn-sm" %>
+      <%= link_to 'Records', regi_patients_path(regi.id), class: "btn btn-outline-primary btn-sm rounded-pill" %>
+      <%= link_to 'Charts', regi_charts_path(regi.id), class: "btn btn-outline-success btn-sm rounded-pill" %>
       </td>
 
     </tr>
