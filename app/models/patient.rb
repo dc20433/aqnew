@@ -2,8 +2,8 @@ class Patient < ApplicationRecord
   belongs_to :regi
 
   before_save do
-    self.diList.gsub!(/[\[\]\"]/, "") if attribute_present?("diList")
-    self.diList.gsub!(/[\[\]\_"]/, " ") if attribute_present?("diList")
+    self.di_list.gsub!(/[\[\]\"]/, "") if attribute_present?("di_list")
+    self.di_list.gsub!(/[\[\]\_"]/, "") if attribute_present?("di_list")
   end
 
 MARITAL_STATUS = 

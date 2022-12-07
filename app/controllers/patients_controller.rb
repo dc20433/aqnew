@@ -58,6 +58,6 @@ class PatientsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def patient_params
-      params.require(:patient).permit(:vDate, :mStat, :height, :weight, :street, :city, :state, :zip, :cell, :home, :work, :email, :referred, :com1, :com2, :com3, :dOnset, :painScale, :dLost, :dRestd, :cOnset, :better, :worse, :oDrs, :oDrsWhen, :pcpNm, :hosp, :hWhen, :diagGiven, :diagWhere, :aqB4, :aqrist, :aqWhere, :oDis, :injSurg, :medTaken, :alcohol, :tobacco, :lastPrd, :preg, :pregWks, :regi_id, diList:[] )
+      params.require(:patient).permit(:v_date, :m_stat, :height, :weight, :street, :city, :state, :zip, :cell, :home, :work, :email, :referred, :com1, :com2, :com3, :d_onset, :pain_scale, :d_lost, :d_restd, :c_onset, :better, :worse, :o_drs, :o_drs_when, :pcp_name, :hosp, :h_when, :diag_given, :diag_where, :aq_b4, :aqrist, :aq_where, :o_dis, :inj_surg, :med_taken, :alcohol, :tobacco, :last_prd, :preg, :preg_wks, :regi_id, di_list:[] )
     end
 end

@@ -17,11 +17,11 @@
         <th style="width:150px"></th>
       </tr>
     </thead>
-  <% @regis.order('lastNm ASC').each do |regi| %>
+  <% @regis.order('last_name ASC').each do |regi| %>
 
     <tr>
-      <td><%= link_to regi.lastNm, regi_path(regi.id) %></td>
-      <td><%= regi.firstNm %></td>
+      <td><%= link_to regi.last_name, regi_path(regi.id) %></td>
+      <td><%= regi.first_name %></td>
       <td><%= regi.init %></td>
       <td><%= regi.gender %></td>
       <td><%= regi.dob %></td>

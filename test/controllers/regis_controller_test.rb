@@ -17,7 +17,7 @@ class RegisControllerTest < ActionDispatch::IntegrationTest
 
   test "should create regi" do
     assert_difference("Regi.count") do
-      post regis_url, params: { regi: { dob: @regi.dob, firstNm: @regi.firstNm, gender: @regi.gender, init: @regi.init, lastNm: @regi.lastNm, user_id: @regi.user_id } }
+      post regis_url, params: { regi: { dob: @regi.dob, first_name: @regi.first_name, gender: @regi.gender, init: @regi.init, last_name: @regi.last_name, user_id: @regi.user_id } }
     end
 
     assert_redirected_to regi_url(Regi.last)
@@ -34,7 +34,7 @@ class RegisControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update regi" do
-    patch regi_url(@regi), params: { regi: { dob: @regi.dob, firstNm: @regi.firstNm, gender: @regi.gender, init: @regi.init, lastNm: @regi.lastNm, user_id: @regi.user_id } }
+    patch regi_url(@regi), params: { regi: { dob: @regi.dob, first_name: @regi.first_name, gender: @regi.gender, init: @regi.init, last_name: @regi.last_name, user_id: @regi.user_id } }
     assert_redirected_to regi_url(@regi)
   end
 

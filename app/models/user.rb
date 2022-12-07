@@ -12,7 +12,7 @@ class User < ApplicationRecord
 
   validates :name, presence: true
   validates :role, presence: true
-  validates :userNm, presence: true, uniqueness: true
+  validates :user_name, presence: true, uniqueness: true
   validates :email, presence: true, uniqueness: true, format: { with: /@./, message: "Not a valid email address" }
 
   enum role: [:patient, :manager, :admin]
@@ -24,14 +24,14 @@ class User < ApplicationRecord
   attr_accessor :login
 
   def login
-    @login || self.userNm || self.email
+    @login || self.user_name || self.email
   end
 
   def self.find_for_database_authentication(warden_condition)
     conditions = warden_condition.dup
     if(login = conditions.delete(:login)) 
-      where(conditions.to_h).where(["lower(userNm) = :value OR lower(email) = :value", { value: login.downcase }]).first
-    elsif conditions.has_key?(:userNm) || conditions.has_key?(:email)
+      where(conditions.to_h).where(["lower(user_name) = :value OR lower(email) = :value", { value: login.downcase }]).first
+    elsif conditions.has_key?(:user_name) || conditions.has_key?(:email)
       where(conditions.to_h).first
     end
   end

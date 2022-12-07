@@ -1,8 +1,8 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  vDate: 2022-11-25
-  mStat: MyString
+  v_date: 2022-11-25
+  m_stat: MyString
   height: 9.99
   weight: 9.99
   street: MyString
@@ -17,35 +17,35 @@ one:
   com1: MyString
   com2: MyString
   com3: MyString
-  dOnset: 2022-11-25
-  painScale: 1
-  dLost: 1
-  dRestd: 1
-  cOnset: MyString
+  d_onset: 2022-11-25
+  pain_scale: 1
+  d_lost: 1
+  d_restd: 1
+  c_onset: MyString
   better: MyString
   worse: MyString
-  oDrs: MyString
-  oDrsWhen: 2022-11-25
-  pcpNm: MyString
+  o_drs: MyString
+  o_drs_when: 2022-11-25
+  pcp_name: MyString
   hosp: MyString
-  hWhen: 2022-11-25
-  diagGiven: MyString
-  diagWhere: MyString
-  aqB4: MyString
+  h_when: 2022-11-25
+  diag_given: MyString
+  diag_where: MyString
+  aq_b4: MyString
   aqrist: MyString
-  aqWhere: MyString
-  diList: MyString
-  oDis: MyString
-  injSurg: MyString
-  medTaken: MyString
-  lastPrd: 2022-11-25
+  aq_where: MyString
+  di_list: MyString
+  o_dis: MyString
+  inj_surg: MyString
+  med_taken: MyString
+  last_prd: 2022-11-25
   preg: MyString
-  pregWks: 1
+  preg_wks: 1
   regi: one
 
 two:
-  vDate: 2022-11-25
-  mStat: MyString
+  v_date: 2022-11-25
+  m_stat: MyString
   height: 9.99
   weight: 9.99
   street: MyString
@@ -60,28 +60,28 @@ two:
   com1: MyString
   com2: MyString
   com3: MyString
-  dOnset: 2022-11-25
-  painScale: 1
-  dLost: 1
-  dRestd: 1
-  cOnset: MyString
+  d_onset: 2022-11-25
+  pain_scale: 1
+  d_lost: 1
+  d_restd: 1
+  c_onset: MyString
   better: MyString
   worse: MyString
-  oDrs: MyString
-  oDrsWhen: 2022-11-25
-  pcpNm: MyString
+  o_drs: MyString
+  o_drs_when: 2022-11-25
+  pcp_name: MyString
   hosp: MyString
-  hWhen: 2022-11-25
-  diagGiven: MyString
-  diagWhere: MyString
-  aqB4: MyString
+  h_when: 2022-11-25
+  diag_given: MyString
+  diag_where: MyString
+  aq_b4: MyString
   aqrist: MyString
-  aqWhere: MyString
-  diList: MyString
-  oDis: MyString
-  injSurg: MyString
-  medTaken: MyString
-  lastPrd: 2022-11-25
+  aq_where: MyString
+  di_list: MyString
+  o_dis: MyString
+  inj_surg: MyString
+  med_taken: MyString
+  last_prd: 2022-11-25
   preg: MyString
-  pregWks: 1
+  preg_wks: 1
   regi: two

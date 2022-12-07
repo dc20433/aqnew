@@ -18,14 +18,14 @@
       </tr>
     </thead>
     </tbody>
-      <% @regi.charts.order("tDate DESC").each do |chart| %>
+      <% @regi.charts.order("t_date DESC").each do |chart| %>
         <tr style="height:15px">
-          <td><%= link_to chart.tDate, regi_chart_path(@regi,chart)  %></td>
+          <td><%= link_to chart.t_date, regi_chart_path(@regi,chart)  %></td>
           <td style="overflow: hidden"><%= chart.soap %></td>
-          <td><%= chart.acuList %></td>
-          <td><%= chart.cMedList %></td>
-          <td><%= chart.cForList %></td>
-          <td><%= chart.oTreats %></td>
+          <td><%= chart.acu_list %></td>
+          <td><%= chart.c_med_list %></td>
+          <td><%= chart.c_for_list %></td>
+          <td><%= chart.o_treats %></td>
         </tr>
       <% end %>
     </tbody>

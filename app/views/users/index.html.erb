@@ -19,7 +19,7 @@
       <tr>
         <td><%= link_to_unless_current user.name, user_path(user.id) %></td>
         <td><%= user.role %></td>
-        <td><%= user.userNm %></td>
+        <td><%= user.user_name %></td>
         <td><%= user.email %></td>
         <td><%= user.name == current_user.name ? "Yes" : "-" %></td>
         <td><%= user.current_sign_in_at.strftime('%y-%m-%d %H:%M') %></td>

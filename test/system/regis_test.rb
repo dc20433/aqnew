@@ -15,10 +15,10 @@ class RegisTest < ApplicationSystemTestCase
     click_on "New regi"
 
     fill_in "Dob", with: @regi.dob
-    fill_in "Firstnm", with: @regi.firstNm
+    fill_in "first_name", with: @regi.first_name
     fill_in "Gender", with: @regi.gender
     fill_in "Init", with: @regi.init
-    fill_in "Lastnm", with: @regi.lastNm
+    fill_in "last_name", with: @regi.last_name
     fill_in "User", with: @regi.user_id
     click_on "Create Regi"
 
@@ -31,10 +31,10 @@ class RegisTest < ApplicationSystemTestCase
     click_on "Edit this regi", match: :first
 
     fill_in "Dob", with: @regi.dob
-    fill_in "Firstnm", with: @regi.firstNm
+    fill_in "first_name", with: @regi.first_name
     fill_in "Gender", with: @regi.gender
     fill_in "Init", with: @regi.init
-    fill_in "Lastnm", with: @regi.lastNm
+    fill_in "last_name", with: @regi.last_name
     fill_in "User", with: @regi.user_id
     click_on "Update Regi"
 

@@ -1,19 +1,19 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  tDate: 2022-11-25
+  t_date: 2022-11-25
   soap: MyText
-  acuList: MyString
-  cMedList: MyString
-  cForList: MyString
-  oTreats: MyString
+  acu_list: MyString
+  c_med_list: MyString
+  c_for_list: MyString
+  o_treats: MyString
   regi: one
 
 two:
-  tDate: 2022-11-25
+  t_date: 2022-11-25
   soap: MyText
-  acuList: MyString
-  cMedList: MyString
-  cForList: MyString
-  oTreats: MyString
+  acu_list: MyString
+  c_med_list: MyString
+  c_for_list: MyString
+  o_treats: MyString
   regi: two

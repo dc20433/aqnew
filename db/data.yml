@@ -1,0 +1,227 @@
+
+---
+ar_internal_metadata:
+  columns:
+  - key
+  - value
+  - created_at
+  - updated_at
+  records: 
+  - - environment
+    - development
+    - 2022-11-26 03:36:13.176289000 Z
+    - 2022-11-26 03:36:13.176289000 Z
+
+---
+users:
+  columns:
+  - id
+  - email
+  - encrypted_password
+  - reset_password_token
+  - reset_password_sent_at
+  - remember_created_at
+  - sign_in_count
+  - current_sign_in_at
+  - last_sign_in_at
+  - current_sign_in_ip
+  - last_sign_in_ip
+  - confirmation_token
+  - confirmed_at
+  - confirmation_sent_at
+  - unconfirmed_email
+  - name
+  - contactN
+  - user_name
+  - role
+  records: 
+  - - 1
+    - jay@test.com
+    - "$2a$12$eLQWf7F.CBHp8kF29b7yUuDq6ijY5Er1ByYnxEGX31WtaZ9X2EqVy"
+    -
+    -
+    -
+    - 27
+    - 2022-12-06 20:46:47.902585000 Z
+    - 2022-12-06 17:59:18.279688000 Z
+    - "::1"
+    - "::1"
+    - KrkEtB59CVxADhDM68rb
+    - 2022-11-29 15:59:23.764356000 Z
+    - 2022-11-29 15:00:50.877947000 Z
+    -
+    - Jay Zed
+    -
+    - JZed
+    - 2
+  - - 2
+    - bob@test.com
+    - "$2a$12$rwvLYZ5uijQWGUK.p8MnHOqhENPNwWx03m/2oga9lz6b.Yk9XpasS"
+    -
+    -
+    -
+    - 7
+    - 2022-12-03 17:49:13.922644000 Z
+    - 2022-12-01 22:41:42.953131000 Z
+    - "::1"
+    - "::1"
+    - 6nLsWJ4estAZ4fk2Q5Vo
+    - 2022-11-29 15:10:53.819942000 Z
+    - 2022-11-29 15:09:32.325079000 Z
+    -
+    - Bob Evan
+    -
+    - BEvan
+    - 0
+  - - 4
+    - mary@test.com
+    - "$2a$12$/s1KymEIJoXpmpVlivzIeuQcZqhWoS4bR9B81mna1DpbENs0fHMju"
+    -
+    -
+    -
+    - 10
+    - 2022-12-03 14:58:07.059283000 Z
+    - 2022-12-03 14:43:00.456136000 Z
+    - "::1"
+    - "::1"
+    - vnXZtyYgiByeb1Rs9BNr
+    - 2022-11-29 19:58:37.131854000 Z
+    - 2022-12-03 14:18:37.760918000 Z
+    - bing@test.com
+    - Mary Long
+    -
+    - MLong
+    - 1
+  - - 5
+    - ben@test.com
+    - "$2a$12$KJyCC1JJKd9yeLSbHySyVuVDTNHn.gFk6VdUe2Erwv2SsxjMbl5te"
+    - fad4a0b3927a1df8072ff644190dc2123505df008a321f2744037480b53b7e3a
+    - 2022-12-01 03:26:12.890653000 Z
+    -
+    - 8
+    - 2022-12-02 15:49:19.685014000 Z
+    - 2022-12-01 22:55:53.965570000 Z
+    - "::1"
+    - "::1"
+    - kWYbW_BSoC1vP3PMsuuy
+    - 2022-11-29 20:03:54.387258000 Z
+    - 2022-11-29 20:03:09.165070000 Z
+    -
+    - Ben Francisco
+    -
+    - BFrancisco
+    - 0
+  - - 8
+    - jill@test.com
+    - "$2a$12$cYtHGCoV57m3yIwiFbNZuO0vJ5nTd.iHOyCtfzbnf5SJOcwdSmWA."
+    -
+    -
+    -
+    - 9
+    - 2022-12-05 15:10:16.237351000 Z
+    - 2022-12-05 14:43:37.120676000 Z
+    - "::1"
+    - "::1"
+    - 2TB9BgB1tGv7mpqLgfxz
+    - 2022-11-30 23:13:53.054664000 Z
+    - 2022-11-30 23:13:26.370658000 Z
+    -
+    - Jill Rosenberg
+    - 111-111-1111
+    - JRosenberg
+    - 2
+  - - 9
+    - fred@test.com
+    - "$2a$12$nkWjMen8s3hkU.jXIle.A./Eq56PqNMzS1dOKp/IbUymTQAvRFOWy"
+    -
+    -
+    -
+    - 13
+    - 2022-12-03 17:35:24.557328000 Z
+    - 2022-12-03 17:27:25.502355000 Z
+    - "::1"
+    - "::1"
+    - 8Eiq6FtqXzBPyyUYnB2Y
+    - 2022-12-02 16:08:45.122695000 Z
+    - 2022-12-02 16:08:19.455436000 Z
+    -
+    - Fred Lorn
+    -
+    - FLorn
+    - 0
+  - - 10
+    - cindy@test.com
+    - "$2a$12$uFShqilERxjzKrTH3Dr6s.n6uk12NQ1GvhM1bZs0WR5snXNecQ90C"
+    -
+    -
+    -
+    - 6
+    - 2022-12-03 03:45:50.229487000 Z
+    - 2022-12-03 03:32:22.046755000 Z
+    - "::1"
+    - "::1"
+    - x73FhtjEyi1esr2WorUu
+    - 2022-12-02 22:17:04.661964000 Z
+    - 2022-12-02 22:16:52.394753000 Z
+    -
+    - Cindy Zed
+    -
+    - CZed
+    - 1
+  - - 11
+    - jane@test.com
+    - "$2a$12$1COdokoHqWAHB5EPu/Iv9u6RHtxLAxWCPg7cJPqqDoDUvcJj31TLS"
+    -
+    -
+    -
+    - 1
+    - 2022-12-03 02:54:17.282859000 Z
+    - 2022-12-03 02:54:17.282859000 Z
+    - "::1"
+    - "::1"
+    - u5r4QsP_iyvTLs7XnNa5
+    - 2022-12-03 02:54:12.031358000 Z
+    - 2022-12-03 02:53:31.275195000 Z
+    -
+    - Jane Flounders
+    -
+    - JFlounders
+    - 0
+  - - 12
+    - zach@test.com
+    - "$2a$12$jCA9xASUC/JEv4sMZDKlSONha9pZ72WnzifxRPZushOqkcSbqNsOG"
+    -
+    -
+    -
+    - 1
+    - 2022-12-03 14:35:37.950447000 Z
+    - 2022-12-03 14:35:37.950447000 Z
+    - "::1"
+    - "::1"
+    - tFGrnShn1gsbkyphhJER
+    - 2022-12-03 14:34:02.128263000 Z
+    - 2022-12-03 14:33:45.269036000 Z
+    -
+    - Zach Baden
+    -
+    - ZBaden
+    - 2
+  - - 13
+    - jerry@test.com
+    - "$2a$12$w3pI3jy/cu3I6BFao83cwOtC4vLYm.FtyTtKlZrSLKxAozCY42uIq"
+    -
+    -
+    -
+    - 3
+    - 2022-12-05 21:58:42.417654000 Z
+    - 2022-12-05 15:11:08.055074000 Z
+    - "::1"
+    - "::1"
+    - LrrUpyAWkHgKyzz1LcDM
+    - 2022-12-05 15:09:12.113987000 Z
+    - 2022-12-05 15:08:53.761867000 Z
+    -
+    - Jerry Anderson
+    -
+    - JAnderson
+    - 2

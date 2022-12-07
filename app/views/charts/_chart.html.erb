@@ -1,4 +1,4 @@
-<% @c = Chart.where(regi_id: params[:regi_id]).order('tDate DESC') %>
+<% @c = Chart.where(regi_id: params[:regi_id]).order('t_date DESC') %>
 
 <%= form_with(model: [@regi,@chart]) do |f| %>
   
@@ -17,26 +17,26 @@
   <div class="row">
     <div class="col col-md-2">
       <b>Updated on</b>
-      <%= f.date_field :tDate, value:@c.last.tDate, class:"form-control form-control-sm border-primary" %>
+      <%= f.date_field :t_date, value:@c.last.t_date, class:"form-control form-control-sm border-primary" %>
     </div>
   </div>
 
   <div class="row">
     <div class="col">
       <b>Acupoints Used</b>
-      <%= f.text_field :acuList, value:@c.last.acuList, class:"form-control form-control-sm border-primary" %>
+      <%= f.text_field :acu_list, value:@c.last.acu_list, class:"form-control form-control-sm border-primary" %>
     </div>
     <div class="col">
       <b>Chinese Medicines</b>
-      <%= f.text_field :cMedList, value:@c.last.cMedList, class:"form-control form-control-sm border-primary" %>
+      <%= f.text_field :c_med_list, value:@c.last.c_med_list, class:"form-control form-control-sm border-primary" %>
     </div>
     <div class="col">
       <b>Formulae</b>
-      <%= f.text_field :cForList, value:@c.last.cForList, class:"form-control form-control-sm border-primary" %>
+      <%= f.text_field :c_for_list, value:@c.last.c_for_list, class:"form-control form-control-sm border-primary" %>
     </div>
     <div class="col">
       <b>Other Treatments</b>
-      <%= f.text_field :oTreats, value:@c.last.oTreats, class:"form-control form-control-sm border-primary" %>
+      <%= f.text_field :o_treats, value:@c.last.o_treats, class:"form-control form-control-sm border-primary" %>
     </div>
   </div>
 

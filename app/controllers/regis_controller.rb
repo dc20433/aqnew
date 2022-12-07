@@ -58,6 +58,6 @@ class RegisController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def regi_params
-      params.require(:regi).permit(:lastNm, :firstNm, :init, :gender, :dob)
+      params.require(:regi).permit(:last_name, :first_name, :init, :gender, :dob)
     end
 end

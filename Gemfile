@@ -75,3 +75,5 @@ end
 gem 'nested_scaffold'
 gem 'ransack'
 gem 'devise'
+gem 'pg'
+gem 'yaml_db'

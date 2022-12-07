@@ -21,10 +21,10 @@
     </thead>
     </tbody>
 
-      <% @regi.patients.order('vDate DESC').each do |patient| %>
+      <% @regi.patients.order('v_date DESC').each do |patient| %>
         <tr>
           <td>
-            <%= link_to patient.vDate, regi_patient_path(@regi,patient) %>
+            <%= link_to patient.v_date, regi_patient_path(@regi,patient) %>
           </td>  
           <td>
             <%= patient.street %><%= ', ' if patient.street? %>
@@ -45,13 +45,13 @@
             <%= patient.com3 %>
           </td>
           <td>
-            <%= patient.dOnset %><%= '/Pain: ' if patient.painScale? %>
-            <%= patient.painScale %>
+            <%= patient.d_onset %><%= '/Pain: ' if patient.pain_scale? %>
+            <%= patient.pain_scale %>
           </td>
-          <td><%= patient.pcpNm %></td>
+          <td><%= patient.pcp_name %></td>
           <td>
-            <%= patient.diList %><%= ', ' if patient.oDis? %>
-            <%= patient.oDis %><%= ', Preg' if patient.preg == 'Yes' %>
+            <%= patient.di_list %><%= ', ' if patient.o_dis? %>
+            <%= patient.o_dis %><%= ', Preg' if patient.preg == 'Yes' %>
           </td>
           <td><% patient.regi %></td>
         </tr>

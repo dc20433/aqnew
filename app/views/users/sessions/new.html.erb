@@ -6,7 +6,7 @@
     <div class="card-body">
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
         <div class='form-group'>
-          <b><%= f.label :userNm_or_email, "Username or Email", class:'pt-2' %></b>
+          <b><%= f.label :user_name_or_email, "Username or Email", class:'pt-2' %></b>
           <%= f.text_field :login, autofocus: true, class:'form-control border-primary' %>
         </div>
 
