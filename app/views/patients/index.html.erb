@@ -51,7 +51,8 @@
           <td><%= patient.pcp_name %></td>
           <td>
             <%= patient.di_list %><%= ', ' if patient.o_dis? %>
-            <%= patient.o_dis %><%= ', Preg' if patient.preg == 'Yes' %>
+            <%= patient.o_dis %><%= ', ' if patient.inj_surg? %>
+            <%= patient.inj_surg %><%= ', Preg' if patient.preg == 'Yes' %>
           </td>
           <td><% patient.regi %></td>
         </tr>
