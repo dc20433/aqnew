@@ -11,7 +11,8 @@ Rails.application.routes.draw do
     confirmations: 'users/confirmations'
   }
   
-  get "consent" => 'sites#consent'
+  get 'consent' => 'sites#consent'
+  get 'reset' => 'sites#reset'
   get 'users/index' => 'users#index'
   get 'users/new' => 'users#new'
   get 'users/show' => 'users#show'
@@ -20,5 +21,5 @@ Rails.application.routes.draw do
   resources :users
   resources :sessions, except: [:edit, :update, :show, :new, :destroy]
 
-root 'sites#home'
+  root 'sites#home'
 end

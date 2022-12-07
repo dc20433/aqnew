@@ -25,7 +25,8 @@
 
         <% if current_user %>
           <li class="nav-item">
-            <%= link_to "| Log out |", destroy_user_session_path, class:"nav-link active", data: { turbo_method: :delete } %>
+            <%# link_to "| Log out |", destroy_user_session_path, class:"nav-link active", data: { turbo_method: :delete } %>
+            <%= link_to "| log out |", reset_path, class:"nav-link active" %>
           </li>
         <% else %>
           <li class="nav-item">

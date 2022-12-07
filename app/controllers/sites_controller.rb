@@ -4,4 +4,9 @@ class SitesController < ApplicationController
 
   def consent
   end
+
+  def reset
+    reset_session
+    redirect_to root_path
+  end
 end
